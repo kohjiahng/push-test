@@ -12,14 +12,5 @@ webpush.setVapidDetails(
   vapidKeys.publicKey,
   vapidKeys.privateKey
 );
-
-// This is the same output of calling JSON.stringify on a PushSubscription
-const pushSubscription = {
-  endpoint: '.....',
-  keys: {
-    auth: '.....',
-    p256dh: '.....'
-  }
-};
-
-webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
+const pushSubscription ={"endpoint":"https://updates.push.services.mozilla.com/wpush/v2/gAAAAABoYLBY1cySI0PtjvMALFN_MWAB6Oo1eNF9nJGlitqcjU-6n7pQgk32GuHTRz5d6eIv3lvlwEjPckiaQSnfDBRSCoC_LbjRnmlpXIbrgRzTKrD9hHn_nhblUst281MxOWzq3huytAVqbL5c8jEnLRWsMI7P7jnX28P0kCrz8MfkLotjuHg","expirationTime":null,"keys":{"auth":"K5gaNHJNjqs7S_184jSLzw","p256dh":"BFvi9fGNP4z7T-fLg-c9pr5MN9vhNib4Lro1yAd-ZNo0x8y0mj6-oNSR3h4l7CLBPeOrOV4co8lRAs1-_PnB5Os"}} 
+webpush.sendNotification(pushSubscription, 'Your Push Payload Text').then(() => console.log("DONE"));
